@@ -1,0 +1,94 @@
+{% extends 'Garage/base.html' %} {% block content %}
+<div class="container">
+  <div class="searchbox">
+    <form action="{% url 'search' %}" method="POST">
+      {% csrf_token %} {{ searchForm.searchinput }}
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <div class="main">
+    <div class="vehicles">
+      <h2>Vehicles</h2>
+
+      {% if message %}
+      <p class="message" id="message">
+        <span>{{ message }}</span>
+      </p>
+      {% endif %} {% if data %}
+
+      <form action="{% url 'updateVehicle' %}" method="POST">
+        {% csrf_token %}
+        <div class="item">
+          <label for="">Vehicle No</label>
+          {{ vehicleForm.vehicleno }}
+        </div>
+        <div class="item">
+          <label for="">Brand</label>
+          {{ vehicleForm.brand }}
+        </div>
+        <div class="item">
+          <label for="">Model</label>
+          {{ vehicleForm.model }}
+        </div>
+        <button type="submit">UPDATE</button>
+      </form>
+      {%else%}
+      <form action="{% url 'addVehicle'%}" method="POST">
+        {% csrf_token %}
+        <div class="item">
+          <label for="">Vehicle No</label>
+          {{ vehicleForm.vehicleno }}
+        </div>
+        <div class="item">
+          <label for="">Brand</label>
+          {{ vehicleForm.brand }}
+        </div>
+        <div class="item">
+          <label for="">Model</label>
+          {{ vehicleForm.model }}
+        </div>
+        <button type="submit">ADD</button>
+      </form>
+      {%endif%}
+      <nav>
+        <ul>
+          {% if vehicleno %}
+          <li><a href="{% url 'deleteVehicle' vehicleno %}">Delete</a></li>
+          <li><a href="{% url 'addService' vehicleno %}">Add services</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+    <div class="services">
+      <h2>services</h2>
+
+      <table class="service_table">
+        <tr>
+          <th>Service ID</th>
+          <th>Service Type</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+        {% if services %} {% for list in services %}
+        <tr>
+          <td>{{ list.0 }}</td>
+          <td>{{ list.1 }}</td>
+          <td>
+            <a href="{% url 'updateService' vehicleno list.0 %}">Update</a>
+          </td>
+          <td>
+            <a href="{% url 'deleteService' vehicleno list.0 %}">Delete</a>
+          </td>
+        </tr>
+        {% endfor %} {% else %}
+
+        <tr>
+          <td colspan="4">No data available</td>
+        </tr>
+
+        {% endif %}
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

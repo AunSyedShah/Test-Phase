@@ -1,0 +1,209 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    background-color: #f5f8ff;
+  }
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style-type: none;
+  }
+  button{
+    outline: none;  
+    border: none;
+    cursor: pointer;
+  }
+  body {
+    height: 100vh;
+  }
+  .container {
+    width: 90%;
+    margin: 10px auto;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+  }
+  .searchbox form{
+      display: flex;
+  }
+  .searchbox form button{
+      outline: none;
+      border: none;
+      cursor: pointer;
+      margin: 0 10px;
+  }
+
+  .searchbox form button{
+    display: block;
+      padding: 8px 15px;
+      border: 1px solid rgb(59, 59, 59);
+      background: #fff;
+      color: black;
+      font-size: large;
+      border-radius: 6px;
+      transition: .3s;
+  }
+  .searchbox form button:hover{
+      background-color: rgb(59, 59, 59);
+      color: #fff;
+
+  }
+  
+  .main {
+    display: grid;
+    gap: 1em;
+    /* grid-template-columns: 30% 68.5%; */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .vehicles,
+  .services{
+    background-color: #fff;
+    border: 1px solid rgba(180, 180, 180, 0.5);
+    box-shadow: 0 3px 20px rgba(180, 180, 180, 0.2);
+  }
+  .vehicles h2,.services h2{
+    text-align: center;
+    padding: 20px 10px;
+    color: rgb(59, 59, 59);
+  }
+  .message{
+    text-align: center;
+    font-size: 18px;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid rgba(180, 180, 180, 0.5);
+    color: red;
+  }
+
+  .vehicles form, .services form{
+    width: 50%;
+    margin: 10px auto;
+  }
+  form .item{
+      margin: 15px auto;
+      
+  }
+  .item label{
+      display: block;
+      color: rgb(59, 59, 59);
+      padding: 5px 0;
+  }
+
+  input[type="text"]{
+      height: 25px;
+      padding: 5px;
+      border-radius: 6px;
+      border: 1px solid rgb(228, 227, 227);
+      box-shadow: 0 0 5px rgba(180, 180, 180, .5);
+  }
+  .searchbox label{
+    display: none;
+  }
+  #searchinput{
+      
+      padding: 20px;
+      font-size: 22px;
+      height: 40px;
+  }
+  nav{
+      width: 70%;
+      margin: 4em auto;
+  }
+  nav ul{
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 1em;
+  }
+  nav ul li a,button{
+    text-align: center;
+      display: block;
+      padding: 8px 12px;
+      background-color: rgb(105, 105, 105);
+      color: white;
+      border-radius: 6px;
+  }
+  li a:hover,button:hover{
+      background-color: rgb(59, 59, 59);
+  }
+  .services{
+      display: flex;
+      flex-direction: column;
+      
+  }
+table.service_table{
+    margin: 40px;
+    text-align: center;
+    border-collapse: collapse;
+    
+}
+table.service_table th{
+    background-color: rgba(180, 180, 180, .5);
+    border-right: 2px solid #fff;
+    padding: 6px;
+}
+table.service_table  td{
+    padding: 6px;
+    border-bottom: 1px solid #ddd;
+}
+td{
+  background-color: rgba(243, 242, 242, 0.726);
+}
+.collapsible{
+    background: #777;
+    width: 50%;
+    margin: 0 auto;
+    border: none;
+    padding: 15px 20px;
+    color: #fff;
+    cursor: pointer;
+    text-align: left;
+
+}
+.active, .collapsible:hover{
+    background-color: #555;
+}
+
+.collapsible::after{
+    content: '\002B';
+    display: block;
+    padding: 2px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+.active:after {
+    content: "\2212";
+  }
+
+
+.serviceForm{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border: 1px solid #777;
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.serviceForm form{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.servicebtn{
+    padding: 8px 15px;
+    background-color: rgb(105, 105, 105);
+    color: white;
+    font-size: large;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}

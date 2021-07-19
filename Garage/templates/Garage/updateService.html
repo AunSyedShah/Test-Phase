@@ -1,0 +1,25 @@
+{% extends 'Garage/base.html' %} {% block content %}
+<div class="container">
+  <div class="main">
+    <div class="services">
+      <h2>updata sercice</h2>
+      {% if form %}
+      <form action="{%url 'updateService' vehicleno serviceid %}" method="POST">
+        {% csrf_token %}
+        <div class="item">
+          <label for="">Service Type</label>
+          {{ form.servicetype }}
+        </div>
+        {{ form.vehicleno }}
+        <button>UPDATE</button>
+      </form>
+      {% else %}
+      <p class="message" id="message">
+        <span>Vehicle {{ vehicleno }} doesn't exit</span>
+        <a href="{% url 'GarageHome' %}">add vehicle </a>
+      </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock%}

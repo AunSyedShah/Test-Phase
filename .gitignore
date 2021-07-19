@@ -1,0 +1,10 @@
+# cache files and dirs
+*__pycache__
+*_pycache_
+# database file
+*.db
+*.sqlite3
+# migrations
+*migrations
+# virtual env
+*.venv
