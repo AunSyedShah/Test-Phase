@@ -12,14 +12,6 @@ class VehicalForm(forms.Form):
     model = forms.CharField(label=False,max_length=12,
                             widget=forms.TextInput(attrs={"id":"model"}))
 
-# class ServicesForm(forms.Form):
-#     # serviceid = forms.CharField(label=False,max_length=10,
-#     #                             widget=forms.TextInput(attrs={"id":"serviceid"}))
-#     serviceid = forms.IntegerField(label=False,widget=forms.HiddenInput(attrs={"id":"serviceid"}))
-#     servicetype = forms.CharField(label=False,max_length=10,
-#                                 widget=forms.TextInput(attrs={"id":"servicetype"}))
-#     vehicleno = forms.CharField(label=False,max_length=10,
-#                                 widget=forms.HiddenInput(attrs={"id":"vehicleno"}))
 
 class updateServiceForm(forms.Form):
     servicetype = forms.CharField(label=False,max_length=10,
